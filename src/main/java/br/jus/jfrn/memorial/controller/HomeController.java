@@ -1,0 +1,30 @@
+package br.jus.jfrn.memorial.controller;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class HomeController {
+    
+	@RequestMapping("/memorial")
+	public String index(Model model) {
+	
+		ArrayList<String> testesLista = new ArrayList<String>();
+		
+		testesLista.add("Iteração");
+		testesLista.add("das");
+		testesLista.add("linhas");
+		testesLista.add("da");
+		testesLista.add("tabela");
+		
+		model.addAttribute("testesLista", testesLista);
+        
+		return "index";
+    }
+	
+}
